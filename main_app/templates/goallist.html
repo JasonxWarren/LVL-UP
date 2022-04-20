@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Our Goals</h1>
+    {% for goal in goals %}
+    <h2>Goal: {{goal.name}}</h2>
+    <h3>Description: {{goal.description}}</h3>
+    <h3>Number of days completed: {{goal.dailyz}}</h3>
+    <h3>Days to complete challenge: {{goal.duration}}</h3>
+    {% endfor %}
+{% endblock %}
