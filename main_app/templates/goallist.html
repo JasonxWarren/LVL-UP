@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
+{%load static%}
 {% block content %}
+<div class="container">
 <form> 
-    <div>
         <input type="text" name="name" placeholder="goal name"/>
         <input type="submit" value="Search"/>
         <div>
             <a href="{% url 'goal-list' %}">Clear search</a>
+            <a href="{% url 'goals-create' %}">Add a new Goal</a>
 </form>
     <h1>Our Goals:</h1>
     {% for goal in goals %}
@@ -14,4 +16,5 @@
     <h3>Number of days completed: {{goal.dailyz}}</h3>
     <h3>Days to complete challenge: {{goal.duration}}</h3>
     {% endfor %}
+    </div>
 {% endblock %}

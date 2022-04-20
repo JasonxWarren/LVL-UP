@@ -4,6 +4,7 @@ from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Goals
+from django.views.generic.edit import CreateView
 # Create your views here.
 class Home(TemplateView):
     template_name ="home.html"
@@ -35,3 +36,9 @@ class GoalList(TemplateView):
         else: 
             context["goals"]= Goals.objects.all()
         return context
+
+class Goals_Create(CreateView):
+    model = Goals
+    fields = ['name','description','dailyz',]
+    template_name='goals_create.html'
+    success_url = "/goals/"
