@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Our Goals</h1>
+<form> 
+    <div>
+        <input type="text" name="name" placeholder="goal name"/>
+        <input type="submit" value="Search"/>
+        <div>
+            <a href="{% url 'goal-list' %}">Clear search</a>
+</form>
+    <h1>Our Goals:</h1>
     {% for goal in goals %}
     <h2>Goal: {{goal.name}}</h2>
     <h3>Description: {{goal.description}}</h3>

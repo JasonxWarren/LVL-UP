@@ -29,5 +29,9 @@ class GoalList(TemplateView):
 
     def get_context_data(self,**kwargs):
         context= super().get_context_data(**kwargs)
-        context["goals"]= Goals.objects.all()
+        name = self.request.GET.get('name')
+        if name != None:
+            context["goals"]=Goals.objects.filter(name__icontains=name)
+        else: 
+            context["goals"]= Goals.objects.all()
         return context
