@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Goals
 from django.views.generic.edit import CreateView
+from django.views.generic import DetailView
 # Create your views here.
 class Home(TemplateView):
     template_name ="home.html"
@@ -42,3 +43,7 @@ class Goals_Create(CreateView):
     fields = ['name','description','dailyz',]
     template_name='goals_create.html'
     success_url = "/goals/"
+
+class GoalDetail(DetailView):
+    model=Goals
+    template_name='goal_detail.html'
