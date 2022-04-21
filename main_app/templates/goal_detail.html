@@ -10,6 +10,6 @@
 </div>
 <div> 
     <a href="{% url 'goal-update' goals.pk %}">Update</a>
-    <a href=""></a>
+    <a href="{% url 'goal-delete' goals.pk %}">Delete</a>
 </div>
 {% endblock %}

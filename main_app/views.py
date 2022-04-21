@@ -10,6 +10,7 @@ from django.views.generic.edit import CreateView
 from django.views.generic import DetailView
 from django.views.generic.edit import UpdateView
 from django.urls import reverse
+from django.views.generic import DeleteView
 # Create your views here.
 class Home(TemplateView):
     template_name ="home.html"
@@ -62,3 +63,8 @@ class GoalUpdate(UpdateView):
     def get_success_url(self):
         return reverse("goal-detail", kwargs={'pk':self.object.pk})
     # success_url = "/goals/"
+
+class GoalDelete(DeleteView):
+    model= Goals
+    template_name='goal-delete-confirmation.html'
+    success_url="/goals/"
