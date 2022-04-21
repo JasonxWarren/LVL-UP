@@ -8,6 +8,8 @@ from django.views.generic.base import TemplateView
 from .models import Goals
 from django.views.generic.edit import CreateView
 from django.views.generic import DetailView
+from django.views.generic.edit import UpdateView
+from django.urls import reverse
 # Create your views here.
 class Home(TemplateView):
     template_name ="home.html"
@@ -46,16 +48,12 @@ class Goals_Create(CreateView):
     template_name='goals_create.html'
     success_url = "/goals/"
 
-# def progress(self,**kwargs):
-#     context= super().get_context_data(**kwargs)
-#     is_completed=dailyz/duration
-#     if is_completed>=1:
-#         redeemed=True
-#     else:
-#         context["goals"]=is_completed
-
-
-
 class GoalDetail(DetailView):
     model=Goals
     template_name='goal_detail.html'
+
+class GoalUpdate(UpdateView):
+    model=Goals
+    fields = ['name','description','dailyz']
+    template_name='goal_update.html'
+    success_url="/goals/"

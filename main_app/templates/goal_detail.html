@@ -9,7 +9,7 @@
 <progress id="progress" value="{{goals.dailyz}}" max="{{goals.duration}}">Progress</progress>
 </div>
 <div> 
-    <a href=""></a>
+    <a href="{% url 'goal-update' goals.pk %}">Update</a>
     <a href=""></a>
 </div>
 {% endblock %}
