@@ -3,7 +3,7 @@ import re
 from token import GREATER
 from django.shortcuts import render
 from django.views import View
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic.base import TemplateView
 from .models import Goals
 from django.views.generic.edit import CreateView
@@ -11,6 +11,8 @@ from django.views.generic import DetailView
 from django.views.generic.edit import UpdateView
 from django.urls import reverse
 from django.views.generic import DeleteView
+from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
 # Create your views here.
 class Home(TemplateView):
     template_name ="home.html"
@@ -50,6 +52,12 @@ class Goals_Create(CreateView):
     def get_success_url(self):
         return reverse("goal-detail", kwargs={'pk':self.object.pk})
     # success_url = "/goals/"
+    
+    def form_valid(self,form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return HttpResponseRedirect('/goals/')
 
 class GoalDetail(DetailView):
     model=Goals
@@ -68,3 +76,8 @@ class GoalDelete(DeleteView):
     model= Goals
     template_name='goal-delete-confirmation.html'
     success_url="/goals/"
+
+def profile(request, username):
+    user=User.objects.get(username=username)
+    goals=Goals.objects.filter(user=user)
+    return render(request, 'profile.html', {'username':username, 'goals':goals})

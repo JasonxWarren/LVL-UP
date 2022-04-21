@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{username}}'s Profile</h1>
+
+{% for goal in goals %}
+<a href="/goals{{ goal.id }}">
+    <h3>{{goal.name}}</h3>
+</a>
+{% endfor %}
+{% endblock %}

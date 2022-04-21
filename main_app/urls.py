@@ -7,4 +7,5 @@ urlpatterns = [
     path('goals/<int:pk>/', views.GoalDetail.as_view(), name="goal-detail"),
     path('goals/update/<int:pk>/', views.GoalUpdate.as_view(), name="goal-update"),
     path("goals/<int:pk>/delete", views.GoalDelete.as_view(), name="goal-delete"),
+    path('user/<username>', views.profile, name='profile'),
 ]
