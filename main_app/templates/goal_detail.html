@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div> 
+<div class="container"> 
 <h1>Name: {{goals.name}}</h1>
 <h2>Description: {{goals.description}}</h2>
 <h2>Dailyz: {{goals.dailyz}}</h2>
 <h3>Duration: {{goals.duration}}</h3>
+<progress id="progress" value="{{goals.dailyz}}" max="{{goals.duration}}">Progress</progress>
 </div>
 <div> 
     <a href=""></a>

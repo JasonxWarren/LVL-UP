@@ -1,4 +1,6 @@
 import imp
+import re
+from token import GREATER
 from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse
@@ -43,6 +45,16 @@ class Goals_Create(CreateView):
     fields = ['name','description','dailyz',]
     template_name='goals_create.html'
     success_url = "/goals/"
+
+# def progress(self,**kwargs):
+#     context= super().get_context_data(**kwargs)
+#     is_completed=dailyz/duration
+#     if is_completed>=1:
+#         redeemed=True
+#     else:
+#         context["goals"]=is_completed
+
+
 
 class GoalDetail(DetailView):
     model=Goals
