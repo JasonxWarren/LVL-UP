@@ -46,7 +46,9 @@ class Goals_Create(CreateView):
     model = Goals
     fields = ['name','description','dailyz',]
     template_name='goals_create.html'
-    success_url = "/goals/"
+    def get_success_url(self):
+        return reverse("goal-detail", kwargs={'pk':self.object.pk})
+    # success_url = "/goals/"
 
 class GoalDetail(DetailView):
     model=Goals
@@ -57,3 +59,6 @@ class GoalUpdate(UpdateView):
     fields = ['name','description','dailyz']
     template_name='goal_update.html'
     success_url="/goals/"
+    def get_success_url(self):
+        return reverse("goal-detail", kwargs={'pk':self.object.pk})
+    # success_url = "/goals/"
