@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic.base import TemplateView
-from .models import Goals
+from .models import Goals, Sponsor
 from django.views.generic.edit import CreateView
 from django.views.generic import DetailView
 from django.views.generic.edit import UpdateView
