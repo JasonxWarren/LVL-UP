@@ -22,6 +22,7 @@ class Goals(models.Model):
     dailyz= models.IntegerField()
     duration= models.IntegerField(default="30")
     redeemed= models.BooleanField(default=False)
+    sponsors= models.ManyToManyField(Sponsor)
     created_at= models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

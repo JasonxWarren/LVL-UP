@@ -49,7 +49,7 @@ class GoalList(TemplateView):
 
 class Goals_Create(CreateView):
     model = Goals
-    fields = ['name','description','dailyz',]
+    fields = ['name','description','dailyz','sponsors']
     template_name='goals_create.html'
     def get_success_url(self):
         return reverse("goal-detail", kwargs={'pk':self.object.pk})
@@ -67,7 +67,7 @@ class GoalDetail(DetailView):
 
 class GoalUpdate(UpdateView):
     model=Goals
-    fields = ['name','description','dailyz']
+    fields = ['name','description','dailyz','sponsors']
     template_name='goal_update.html'
     success_url="/goals/"
     def get_success_url(self):
