@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<h1>All of the Sponsors</h1>
+
+{% for sponsor in sponsors %}
+<div>
+<a href="{% url 'sponsors-show' sponsor.id %}">
+    <div class="card-content">
+        <span>{{sponsor.sponsor_name}}</span>
+        <h2>{{sponsor.offer}}</h2>
+        <img src="{{sponsor.image}}"/>
+    </div>
+    {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

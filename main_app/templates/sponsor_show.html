@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Sponsor details</h1>
+<div>
+<div>
+<span>{{sponsor.name}}</span>
+<h2>{{sponsor.description}}</h2>
+<img src="{{sponsor.image}}"/>
+</div>
+<a href="{% url 'sponsor-update' sponsor.id %}">update</a>
+</div>
+
+
+{% endblock %}

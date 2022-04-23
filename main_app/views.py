@@ -1,4 +1,5 @@
 import imp
+from plistlib import PlistFormat
 import re
 from token import GREATER
 from django.shortcuts import render
@@ -13,6 +14,7 @@ from django.urls import reverse
 from django.views.generic import DeleteView
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+ 
 # Create your views here.
 class Home(TemplateView):
     template_name ="home.html"
@@ -81,3 +83,18 @@ def profile(request, username):
     user=User.objects.get(username=username)
     goals=Goals.objects.filter(user=user)
     return render(request, 'profile.html', {'username':username, 'goals':goals})
+
+def sponsors_index(request):
+    sponsors=Sponsor.objects.all()
+    return render(request, 'sponsor_index.html', {'sponsors':sponsors})
+
+def sponsors_show(request, sponsor_id):
+    sponsor=Sponsor.objects.get(id=sponsor_id)
+    return render(request, 'sponsor_show.html',{'sponsor':sponsor})
+
+
+class SponsorUpdate(UpdateView):
+    model= Sponsor
+    fields=['sponsor_name']
+    template_name='sponsor_update.html'
+    success_url = "/sponsors/"
