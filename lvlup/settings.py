@@ -38,7 +38,7 @@ STATIC_URL = BASE_DIR / 'static'
 SECRET_KEY =str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -137,9 +137,14 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL ='/goals/'
+# LOGOUT_REDIRECT_URL = '/'
 
 # MEDIA_URL = "/media/"
 # MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+
 
 import django_heroku
 django_heroku.settings(locals())
