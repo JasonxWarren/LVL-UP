@@ -66,6 +66,10 @@ class Goals_Create(CreateView):
 class GoalDetail(DetailView):
     model=Goals
     template_name='goal_detail.html'
+    # def get_context_data(self,*args, **kwargs):
+    #     context = super(GoalDetail, self).get_context_data(*args,**kwargs)
+    #     context['Sponsor']=Sponsor.objects.all()
+    #     return context
 
 class GoalUpdate(UpdateView):
     model=Goals
