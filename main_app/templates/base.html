@@ -1,4 +1,4 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/styles.css'%}"/>
-    <script src="{% static 'scripts/app.js' %}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- <script src="{% static 'scripts/app.js' %}" defer></script> -->
     <title>LVL-UP</title>
 </head>
 <body>
-    <div class="navbar"
+    <div class="navbar">
     <h1> LVL-UP</h1>
     <a href="{% url 'goal-list' %}">Goals</a>
     {% if user.is_authenticated %}

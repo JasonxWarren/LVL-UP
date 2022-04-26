@@ -1,12 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<!-- {% if goals.redeemed == False %}
+<script>
+    $('.redeemed-btn').hide();
+</script>
+{% endif %} -->
 <div class="container"> 
 <h1>Name: {{goals.name}}</h1>
 <h2>Description: {{goals.description}}</h2>
 <h2>Dailyz: {{goals.dailyz}}</h2>
 <h3>Duration: {{goals.duration}}</h3>
 <progress id="progress" value="{{goals.dailyz}}" max="{{goals.duration}}">Progress</progress>
+<!-- <button id="redemtion-check">Eligible for redemption: {{goals.redeemed}}</button> -->
+<!-- <script>
+    $('.redeemeption-check').click(function(dailyz, duration, redeemed) {
+        if ( goals.dailyz<goals.duration){
+            $('.redeemed-btn').hide();
+        }
+        if (goals.dailyz>=goals.duration){
+            let redeemed=true;
+            $('.redeemeemed-btn').show;
+        } 
+    });
+
+</script> -->
+{% if goals.dailyz >= goals.duration %}
+<button id="redeemed-btn">Redeem</button>
+{% endif %}
 <div>{% for sponsor in goals.sponsors.all %}  
    <h3> {{sponsor.sponsor_name}} </h3>
    <h3>{{sponsor.offer}} </h3> 
