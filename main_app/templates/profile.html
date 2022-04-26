@@ -1,10 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="row">
+    <div class="column">
 <h1>{{username}}'s Profile</h1>
 
 {% for goal in goals %}
 <a href="/goals/{{ goal.id }}/">
     <h3>{{goal.name}}</h3>
+    <h3> {{goal.dailyz}}</h3>
 </a>
 {% endfor %}
+</div>
+
+    <div class="column">
+    <h1> Redeemed</h1>
+    {% for goal in goals %}
+    {% if goal.dailyz >= goal.duration %}
+        {% for sponsor in goal.sponsors.all %} 
+       <h3> {{sponsor.sponsor_name}} </h3>
+       <h3>{{sponsor.offer}} </h3> 
+        <img src="{{sponsor.image}}">image</img>
+        {% endfor %}
+        {% endif %}
+       
+    {% endfor %}
+    </div>
+</div>
+
 {% endblock %}

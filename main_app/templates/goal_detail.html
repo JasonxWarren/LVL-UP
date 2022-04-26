@@ -25,7 +25,8 @@
 
 </script> -->
 {% if goals.dailyz >= goals.duration %}
-<button id="redeemed-btn">Redeem</button>
+<a href="{% url 'profile' goals.user.username %}">Redeem</a>
+<!-- <button onclick="" id="redeemed-btn">Redeem</button> -->
 {% endif %}
 <div>{% for sponsor in goals.sponsors.all %}  
    <h3> {{sponsor.sponsor_name}} </h3>
