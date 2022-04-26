@@ -10,7 +10,7 @@
 <div>{% for sponsor in goals.sponsors.all %}  
    <h3> {{sponsor.sponsor_name}} </h3>
    <h3>{{sponsor.offer}} </h3> 
-    <span>{{sponsor.image}}</span>
+    <img src="{{sponsor.image}}">image</img>
     {% endfor %}
     </div>
 </div>
