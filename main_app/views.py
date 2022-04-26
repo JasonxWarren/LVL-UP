@@ -16,7 +16,9 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
- 
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 class Home(TemplateView):
     template_name ="home.html"
@@ -36,19 +38,22 @@ class Home(TemplateView):
 #     Goal("Meditate","30 minutes a day","10","30","False"),
 #     Goal("Leetcode","hour a day","15","30","False"),
 # ]
-
+@method_decorator(login_required, name='dispatch')
 class GoalList(TemplateView):
     template_name='goallist.html'
+
 
     def get_context_data(self,**kwargs):
         context= super().get_context_data(**kwargs)
         name = self.request.GET.get('name')
+        # user = self.request.GET.get('user')
+        
         if name != None:
-            context["goals"]=Goals.objects.filter(name__icontains=name)
+            context["goals"]=Goals.objects.filter(name__icontains=name).filter(user = self.request.user)
         else: 
-            context["goals"]= Goals.objects.all()
+            context["goals"]= Goals.objects.filter(user = self.request.user)
         return context
-
+@method_decorator(login_required, name='dispatch')
 class Goals_Create(CreateView):
     model = Goals
     fields = ['name','description','dailyz','sponsors']
@@ -62,7 +67,7 @@ class Goals_Create(CreateView):
         self.object.user = self.request.user
         self.object.save()
         return HttpResponseRedirect('/goals/')
-
+@method_decorator(login_required, name='dispatch')
 class GoalDetail(DetailView):
     model=Goals
     template_name='goal_detail.html'
@@ -70,7 +75,7 @@ class GoalDetail(DetailView):
     #     context = super(GoalDetail, self).get_context_data(*args,**kwargs)
     #     context['Sponsor']=Sponsor.objects.all()
     #     return context
-
+@method_decorator(login_required, name='dispatch')
 class GoalUpdate(UpdateView):
     model=Goals
     fields = ['name','description','dailyz','sponsors']
@@ -79,12 +84,12 @@ class GoalUpdate(UpdateView):
     def get_success_url(self):
         return reverse("goal-detail", kwargs={'pk':self.object.pk})
     # success_url = "/goals/"
-
+@method_decorator(login_required, name='dispatch')
 class GoalDelete(DeleteView):
     model= Goals
     template_name='goal-delete-confirmation.html'
     success_url="/goals/"
-
+@login_required
 def profile(request, username):
     user=User.objects.get(username=username)
     goals=Goals.objects.filter(user=user)
