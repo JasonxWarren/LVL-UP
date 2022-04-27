@@ -65,6 +65,7 @@ The ERD:
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
+
 <!--  
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
@@ -84,7 +85,7 @@ The ERD:
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">About LVL-UP</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -109,8 +110,9 @@ The ERD:
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+<div align="center">
 <img width="319" alt="Screen Shot 2022-04-27 at 7 08 49 PM" src="https://user-images.githubusercontent.com/94083268/165646037-d616501d-47e5-46f0-bafb-6bca37b71ca3.png">
-
+</div>
 
 LVL-UP was made, as a tool to help people improve their lives. We all have goals, and many of the times these goals consist of us taking on recurring tasks to improve ourselves. Such as working out, eating healthy, sleeping well, practicing a new hobby or sport or skill. LVL-UP gives users the ability to create goals, pick sponsors for their goals, and track their progress over a duration of time, this one is set to 30 days. 
 
@@ -125,8 +127,6 @@ I wanted to create a product I could see myself using, and who doesn't want to h
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 * [Python](https://www.python.org/)
 * [Django](https://www.djangoproject.com/)
 * [Bootstrap](https://getbootstrap.com)
@@ -140,6 +140,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 ## Getting Started
 
 As a new user, you need to sign up and create an account, by providing a username and password, there is error handling so don't try to use password as your password, but even if you do, it'll let you know you can't.
+![signup](https://user-images.githubusercontent.com/94083268/165647957-74a6412a-3c6e-491f-a54e-0f0adadb2233.PNG)
 
 ### Prerequisites
 
@@ -165,7 +166,13 @@ as well as installing pipenv shell
 
 <!-- ROADMAP -->
 ## Roadmap
+The first goal has been completed, having a functional MVP to showcase the idea. 
+Future developments include, having a QR code associated with the redeemed the sponsors, that only shows once redeemed. 
+including a public facing user profile to share with friends and family. 
 
+Adding a sponsor site, where sponsors can decide how many daily checkins are required for their sponsorship, along with other tooling for their sponsorships.
+
+Many more ideas to come!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
