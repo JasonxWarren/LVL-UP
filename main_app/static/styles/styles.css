@@ -42,3 +42,9 @@ border-color: rgb(247, 42, 6);
 .profile-goal{
     background:#343f5b;
 }
+label{
+    color: #e204e2
+}
+input {
+    color: #0f5f6a;
+}
