@@ -12,11 +12,15 @@
 <div class="goal-list">
     <h1>Our Goals:</h1>
     {% for goal in goals %}
-    <h2><a href="{% url 'goal-detail' goal.pk %}">Goal:</a>{{goal.name}}</h2>
+    <div class="border">
+    <h2>Goal:<a href="{% url 'goal-detail' goal.pk %}">{{goal.name}}</a></h2>
     <h3>Description: {{goal.description}}</h3>
+    <span></span>
     <h3>Number of days completed: {{goal.dailyz}}</h3>
     <h3>Days to complete challenge: {{goal.duration}}</h3>
     <h3>Goal belongs to: <a href='/user/{{goal.user.username}}'>{{goal.user.username}}</a></h3>
+    <span></span>
+    </div>
     {% endfor %}
     </div>
     </div>
