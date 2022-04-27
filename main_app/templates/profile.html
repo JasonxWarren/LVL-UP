@@ -10,9 +10,10 @@
 <div class="container">
     
 <a href="/goals/{{ goal.id }}/">
-    <h3>{{goal.name}}</h3></a>
-    <h3>{{goal.description}}</h3>
-    <h3> {{goal.dailyz}}</h3>
+    <h3>Goal: {{goal.name}}</h3></a>
+    <h3>Description: {{goal.description}}</h3>
+    <h3>Dailyz: {{goal.dailyz}}</h3>
+    <span></span>
     </div>
 {% endfor %}
 </div>
@@ -28,8 +29,8 @@
             
         {% for sponsor in goal.sponsors.all %}
         <div class="card-body">    
-       <h4 class="card-title"> {{sponsor.sponsor_name}} </h3>
-       <h5 class="card-subtitle">{{sponsor.offer}} </h3> 
+       <h4 class="card-title">Sponsor: {{sponsor.sponsor_name}} </h3>
+       <h5 class="card-subtitle">Offer: {{sponsor.offer}} </h3> 
         <!-- <img src="{{sponsor.image}}">image</img> -->
             </div>
         {% endfor %}
