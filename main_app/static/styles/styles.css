@@ -49,6 +49,7 @@ label{
 }
 input {
     color: #0f5f6a;
+    border-radius: .25rem;
 }
 .card-body {
     background: #0f5f6a;

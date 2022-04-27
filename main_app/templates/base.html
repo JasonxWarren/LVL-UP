@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="{% static 'styles/styles.css'%}"/>
     <link rel="stylesheet" href="{% static 'styles/css/bootstrap.min.css' %}"/>
     <link rel="stylesheet" href="{% static 'styles/css/bootstrap.css' %}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
     <script src="{% static 'scripts/app.js' %}" defer></script>
     <title>LVL-UP</title>
 </head>
 <body>
     <div class="navbar">
-    <h1> LVL-UP</h1>
+    <h1> LVL-UP <i class="bi bi-arrow-up-square-fill"></i></h1>
+    
 
     {% if user.is_authenticated %}
     <span><a href="{% url 'profile' user.username %}">Hello, {{ user.username }}!</a></span>
