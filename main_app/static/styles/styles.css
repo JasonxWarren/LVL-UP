@@ -43,6 +43,7 @@ border-color: rgb(247, 42, 6);
 } */
 .profile-goal{
     background:#343f5b;
+    overflow-y: auto;
 }
 label{
     color: #e204e2
@@ -64,4 +65,8 @@ ul {
 p {
     color: rgba(230, 88, 6, 0.8);
     text-shadow:1px 1px #0FA1B4;
+}
+.scrollable3 {
+    overflow-y: auto;
+    overscroll-behavior: scroll;
 }

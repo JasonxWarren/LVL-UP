@@ -28,7 +28,7 @@
 <a href="{% url 'profile' goals.user.username %}">Redeem</a>
 <!-- <button onclick="" id="redeemed-btn">Redeem</button> -->
 {% endif %}
-<div>{% for sponsor in goals.sponsors.all %}  
+<div class="scrollable3">{% for sponsor in goals.sponsors.all %}  
    <h3> {{sponsor.sponsor_name}} </h3>
    <h3>{{sponsor.offer}} </h3> 
     <!-- <img src="{{sponsor.image}}">image</img> -->

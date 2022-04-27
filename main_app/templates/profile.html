@@ -5,15 +5,17 @@
         <div class="row">
             <div class="col-sm">
 <h1>{{username}}'s Profile</h1>
-
+<div class="scrollable3">
 {% for goal in goals %}
 <div class="container">
+    
 <a href="/goals/{{ goal.id }}/">
     <h3>{{goal.name}}</h3></a>
     <h3>{{goal.description}}</h3>
     <h3> {{goal.dailyz}}</h3>
     </div>
 {% endfor %}
+</div>
 </div>
     
     <div class="col-sm">
