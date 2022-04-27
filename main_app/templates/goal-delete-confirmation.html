@@ -5,8 +5,8 @@
 <form method="post">
     {% csrf_token %}
     <div>
-        <input type="submit" value="Confirm" />
-        <a href="{% url 'goal-detail' goals.pk %}">Cancel</a>
+        <input type="submit" value="Confirm" class="btn btn-success" />
+        <a class="badge badge-secondary" href="{% url 'goal-detail' goals.pk %}">Cancel </a>
     </div>
 
 </form>
