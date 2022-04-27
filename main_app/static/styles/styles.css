@@ -3,6 +3,7 @@
 } */
 .container{
     background:#343f5b;
+    overflow-y: auto;
 }
 
 body {
@@ -34,6 +35,6 @@ h1,h2,h3,h4,h5,h6 {
 .row {
     display: flex;
 }
-.column {
-flex: 50%;
-}
+/* .col-sm {
+border-color: rgb(247, 42, 6);
+} */

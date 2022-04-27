@@ -15,7 +15,7 @@
 <body>
     <div class="navbar">
     <h1> LVL-UP</h1>
-    <a href="{% url 'goal-list' %}">Goals</a>
+
     {% if user.is_authenticated %}
     <span><a href="{% url 'profile' user.username %}">Hello, {{ user.username }}!</a></span>
     <span> | </span>
