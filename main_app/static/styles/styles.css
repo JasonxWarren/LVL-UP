@@ -55,3 +55,9 @@ input {
     background: #0f5f6a;
     background-color: rgba(0, 0, 0, 0.9);
 }
+.helptext {
+    color: #e204e2;
+}
+ul {
+    color: #e204e2;
+}
