@@ -34,11 +34,12 @@
     <img src="{{sponsor.image}}">image</img>
     {% endfor %}
     </div>
+    <div> 
+        <a href="{% url 'goal-update' goals.pk %}">Update</a>
+        <a href="{% url 'goal-delete' goals.pk %}">Delete</a>
+        <a href="{% url 'sponsors-index' %}">Sponsors</a>
+    </div>
 </div>
 
-<div> 
-    <a href="{% url 'goal-update' goals.pk %}">Update</a>
-    <a href="{% url 'goal-delete' goals.pk %}">Delete</a>
-    <a href="{% url 'sponsors-index' %}">Sponsors</a>
-</div>
+
 {% endblock %}

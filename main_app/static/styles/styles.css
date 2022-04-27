@@ -5,6 +5,7 @@
     color:#343f5b;
     background-color: rgba(0, 0, 0, 0.75);
     overflow-y: auto;
+    overscroll-behavior: scroll;
 }
 
 body {
@@ -31,7 +32,8 @@ h1,h2,h3,h4,h5,h6 {
     overflow-y: auto;
 }
 .navbar {
-    background-color: #bbe9ef;
+    color:#343f5b;
+    background-color: rgba(0, 0, 0, 0.85);
 }
 .row {
     display: flex;
@@ -47,4 +49,8 @@ label{
 }
 input {
     color: #0f5f6a;
+}
+.card-body {
+    background: #0f5f6a;
+    background-color: rgba(0, 0, 0, 0.9);
 }
