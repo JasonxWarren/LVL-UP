@@ -2,7 +2,8 @@
     color: cyan
 } */
 .container{
-    background:#343f5b;
+    color:#343f5b;
+    background-color: rgba(0, 0, 0, 0.75);
     overflow-y: auto;
 }
 
@@ -38,3 +39,6 @@ h1,h2,h3,h4,h5,h6 {
 /* .col-sm {
 border-color: rgb(247, 42, 6);
 } */
+.profile-goal{
+    background:#343f5b;
+}

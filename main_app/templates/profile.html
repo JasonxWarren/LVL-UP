@@ -1,21 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <div class="container">
+    <div>
         <div class="row">
             <div class="col-sm">
 <h1>{{username}}'s Profile</h1>
 
 {% for goal in goals %}
+<div class="container">
 <a href="/goals/{{ goal.id }}/">
-    <h3>{{goal.name}}</h3>
+    <h3>{{goal.name}}</h3></a>
     <h3>{{goal.description}}</h3>
     <h3> {{goal.dailyz}}</h3>
-</a>
+    </div>
 {% endfor %}
 </div>
     
     <div class="col-sm">
+        <div class="container">
     <h1> Redeemed</h1>
     {% for goal in goals %}
    
@@ -32,6 +34,7 @@
         {% endif %}
        
     {% endfor %}
+            </div>
         </div>
             
     </div>
